@@ -9,14 +9,14 @@
 	<!--</bean>-->
 
 	<!--循环依赖BeanA依赖BeanB -->
-<!--	<bean id="userServiceImplA" class="impl.UserServiceImplA">-->
-<!--		<property name="userServiceImplB" ref="userServiceImplB"/>-->
-<!--	</bean>-->
+	<bean id="userServiceImplA" class="impl.UserServiceImplA">
+		<property name="userServiceImplB" ref="userServiceImplB"/>
+	</bean>
 
 	<!--循环依赖BeanB依赖BeanA -->
-<!--	<bean id="userServiceImplB" class="impl.UserServiceImplB">-->
-<!--		<property name="userServiceImplA" ref="userServiceImplA"/>-->
-<!--	</bean>-->
+	<bean id="userServiceImplB" class="impl.UserServiceImplB">
+		<property name="userServiceImplA" ref="userServiceImplA"/>
+	</bean>
 
 
 	<!--&lt;!&ndash;顺序一：注册bean定义注册后置处理器 &ndash;&gt;-->
