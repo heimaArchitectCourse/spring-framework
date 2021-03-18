@@ -541,11 +541,13 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		return this.applicationListeners;
 	}
 
+	// 模板方法 (抽象类下定义refresh模板）， 核心方法
 	@Override
 	public void refresh() throws BeansException, IllegalStateException {
 		synchronized (this.startupShutdownMonitor) {
 			StartupStep contextRefresh = this.applicationStartup.start("spring.context.refresh");
 
+			// active 属性设置为true, closed 设置为false ,
 			// Prepare this context for refreshing.
 			prepareRefresh();
 

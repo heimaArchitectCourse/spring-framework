@@ -20,6 +20,7 @@ public class run {
 //		ApplicationContext context =new FileSystemXmlApplicationContext("classpath*:application.xml");
 		//3、初始化ioC容器，支持多个xml
 		ApplicationContext context = new ClassPathXmlApplicationContext("classpath*:application.xml");
+		System.out.println("context的内容为"+context);
 		// （c）从容器中取出Bean的实例，call：AbstractApplicationContext.getBean(java.lang.Class<T>)
 		//工厂模式(simple)
 //		UserService userService = (UserService) context.getBean("userService");
