@@ -1,19 +1,52 @@
-plugins {
-    id 'java'
-}
-
 group 'org.springframework'
 version '5.3.5-SNAPSHOT'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.5'
+    }
+
+}
+//plugins {
+//    id 'java'
+//}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat' //tomcat: 插件
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+//    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+    runtime 'javax.servlet:jstl:1.1.2' // Servlet容器必需
+
     compile(project(":spring-core"))
     compile(project(":spring-beans"))
     compile(project(":spring-context"))
+    compile(project(":spring-context-indexer"))
+    compile(project(":spring-context-support"))
     compile(project(':spring-aop'))
     compile(project(":spring-oxm"))
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile(project(":spring-web"))
+    compile(project(":spring-webmvc"))
+
+    testCompile "junit:junit:4.11"
+
+
+    // tomcat: 将Tomcat运行时库添加到配置tomcat中: (此处为Tomcat9)
+    def tomcatVersion = '9.0.1'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:9.0.0.M6",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+// UTF-8
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
