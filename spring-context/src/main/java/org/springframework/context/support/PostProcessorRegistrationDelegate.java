@@ -73,6 +73,7 @@ final class PostProcessorRegistrationDelegate {
 		// https://github.com/spring-projects/spring-framework/issues?q=PostProcessorRegistrationDelegate+is%3Aclosed+label%3A%22status%3A+declined%22
 
 		// Invoke BeanDefinitionRegistryPostProcessors first, if any.
+		System.out.println("执行invokeBeanFactoryPostProcessors");
 		Set<String> processedBeans = new HashSet<>();
 
 		if (beanFactory instanceof BeanDefinitionRegistry) {
@@ -109,6 +110,7 @@ final class PostProcessorRegistrationDelegate {
 			}
 			sortPostProcessors(currentRegistryProcessors, beanFactory);
 			registryProcessors.addAll(currentRegistryProcessors);
+			System.out.println("执行bean 定义后置处理器  invokeBeanDefinitionRegistryPostProcessors");
 			invokeBeanDefinitionRegistryPostProcessors(currentRegistryProcessors, registry, beanFactory.getApplicationStartup());
 			currentRegistryProcessors.clear();
 
@@ -195,6 +197,7 @@ final class PostProcessorRegistrationDelegate {
 		for (String postProcessorName : nonOrderedPostProcessorNames) {
 			nonOrderedPostProcessors.add(beanFactory.getBean(postProcessorName, BeanFactoryPostProcessor.class));
 		}
+		// bean工厂的后置处理器
 		invokeBeanFactoryPostProcessors(nonOrderedPostProcessors, beanFactory);
 
 		// Clear cached merged bean definitions since the post-processors might have
