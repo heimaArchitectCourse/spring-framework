@@ -1,4 +1,5 @@
 //import org.testng.annotations.Test;
+import org.junit.Test;
 import reflect.User;
 
 import java.lang.reflect.Constructor;
