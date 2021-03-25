@@ -22,15 +22,16 @@ public class BeanFactoryPostProcessorTest implements BeanFactoryPostProcessor {
 	 * @throws BeansException
 	 */
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-		System.out.println("此处调用了BeanFctory后置处理器······");
-		Iterator it = beanFactory.getBeanNamesIterator();
-		String[] names = beanFactory.getBeanDefinitionNames();
-		// 获取了所有的bean（只是定义）名称列表
-		for (int i = 0; i < names.length; i++) {
-			String name = names[i];
-			BeanDefinition bd = beanFactory.getBeanDefinition(name);
-//			System.out.println(name + " 获取到的Bean定义为: " + bd.getBeanClassName());
-
-		}
+//		System.out.println("此处调用了BeanFctory后置处理器······");
+//		Iterator it = beanFactory.getBeanNamesIterator();
+//		System.out.println(it);
+//		String[] names = beanFactory.getBeanDefinitionNames();
+//		// 获取了所有的bean（只是定义）名称列表
+//		for (int i = 0; i < names.length; i++) {
+//			String name = names[i];
+//			BeanDefinition bd = beanFactory.getBeanDefinition(name);
+////			System.out.println(name + " 获取到的Bean定义为: " + bd.getBeanClassName());
+//
+//		}
 	}
 }

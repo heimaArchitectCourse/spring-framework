@@ -1,29 +1,33 @@
 group 'org.springframework'
 version '5.3.5-SNAPSHOT'
 
+
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
-//    dependencies {
-//        classpath 'com.bmuschko:gradle-tomcat-plugin:2.5'
-//    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.1'
+    }
 
 }
 //plugins {
 //    id 'java'
+//    id 'war'
 //}
 
+
 apply plugin: 'java'
-//apply plugin: 'war'
-//apply plugin: 'com.bmuschko.tomcat' //tomcat: 插件
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat' //tomcat: 插件
+
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    runtime 'javax.servlet:jstl:1.1.2' // Servlet容器必需
+//    runtime 'javax.servlet:jstl:1.1.2' // Servlet容器必需
     implementation group: 'junit', name: 'junit', version: '4.10'
     implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.6'
     compile(project(":spring-core"))
@@ -38,20 +42,12 @@ dependencies {
     compile(project(":spring-tx"))
     compile(project(":spring-jdbc"))
 
-
-
- /*   // tomcat: 将Tomcat运行时库添加到配置tomcat中: (此处为Tomcat9)
-    def tomcatVersion = '8.0.42'
+    def tomcatVersion = '7.0.59'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
             "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
-            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"*/
-
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
 }
 
-//  {
-//    httpProtocol = 'org.apache.coyote.http11.Http11Nio2Protocol'
-//    ajpProtocol = 'org.apache.coyote.ajp.AjpNio2Protocol'
-//}
 
 // UTF-8
 tasks.withType(JavaCompile) {
