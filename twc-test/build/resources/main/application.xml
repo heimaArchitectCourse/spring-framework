@@ -28,9 +28,9 @@
 	<!--<bean class="config.BeanPostProcessorTest"></bean>-->
 
 
-	<!--&lt;!&ndash;&lt;!&ndash;  Spirng中的事件>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> &ndash;&gt;&ndash;&gt;-->
-	<!--<bean id="applicationContextListenerOne" class="pattern.observer.ApplicationContextListenerOne"/>-->
-	<!--<bean id="applicationContextListenerTwo" class="pattern.observer.ApplicationContextListenerTwo"/>-->
-	<!--<bean id="applicationContextListenerPubisher" class="pattern.observer.ApplicationContextListenerPubisher"/>-->
+	<!--&lt;!&ndash;  Spirng中的事件>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> &ndash;&gt;-->
+	<bean id="applicationContextListenerOne" class="pattern.observer.ApplicationContextListenerOne"/>
+	<bean id="applicationContextListenerTwo" class="pattern.observer.ApplicationContextListenerTwo"/>
+	<bean id="applicationContextListenerPubisher" class="pattern.observer.ApplicationContextListenerPubisher"/>
 
 </beans>

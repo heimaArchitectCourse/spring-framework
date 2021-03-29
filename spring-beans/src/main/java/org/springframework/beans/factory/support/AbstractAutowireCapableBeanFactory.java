@@ -433,6 +433,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 			throws BeansException {
 
 		Object result = existingBean;
+		//  getBeanPostProcessors 此时有8个后置处理器
+		System.out.println(" bean后置处理器。。。。。。。。。。。。");
+
 		for (BeanPostProcessor processor : getBeanPostProcessors()) {
 			Object current = processor.postProcessAfterInitialization(result, beanName);
 			if (current == null) {

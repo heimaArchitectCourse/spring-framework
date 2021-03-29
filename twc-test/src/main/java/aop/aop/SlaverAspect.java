@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 //将这个类声明为一个切面，需要将其放入IOC容器中
-@Aspect//声明这是一个切面
-@Component//声明这是一个组件
+//@Aspect//声明这是一个切面
+//@Component//声明这是一个组件
 /**
  * 执行顺序
  * @Around进入环绕通知...
@@ -29,7 +29,7 @@ public class SlaverAspect {
 //		调用了下一个拦截器，递归调用ReflectiveMethodInvocation#proceed
 		joinPoint.proceed();
 		long endTime = System.currentTimeMillis();
-		System.out.println(String.format("@Around方法执行耗时>>>>>: %s", endTime - startTime));
+		System.out.println(String.format("@Around   目标方法执行耗时>>>>>: %s", endTime - startTime));
 	}
 
 	//前置通知（进入环绕后执行，下一步执行方法）

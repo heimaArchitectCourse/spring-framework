@@ -17,6 +17,7 @@ public class MvcController {
 	@RequestMapping("/text")
 	@ResponseBody
 	public String text() {
+
 		return "Text...";
 	}
 

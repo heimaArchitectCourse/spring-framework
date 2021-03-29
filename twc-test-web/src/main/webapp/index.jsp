@@ -1,13 +1,9 @@
-<%--
-  author:twc
-  Time: 2021/3/24 17:00
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>SpringMvc源码深入剖析</title>
   </head>
   <body>
-  $END$
+  Gradle构建Spring MVC例子....
   </body>
 </html>

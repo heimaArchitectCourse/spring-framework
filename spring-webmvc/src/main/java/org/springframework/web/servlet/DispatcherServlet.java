@@ -1025,6 +1025,8 @@ public class DispatcherServlet extends FrameworkServlet {
 		WebAsyncManager asyncManager = WebAsyncUtils.getAsyncManager(request);
 
 		try {
+			// 创建视图
+			System.out.println("创建视图");
 			ModelAndView mv = null;
 			Exception dispatchException = null;
 
@@ -1135,6 +1137,8 @@ public class DispatcherServlet extends FrameworkServlet {
 
 		// Did the handler return a view to render?
 		if (mv != null && !mv.wasCleared()) {
+			System.out.println( "渲染视图");
+
 			render(mv, request, response);
 			if (errorView) {
 				WebUtils.clearErrorRequestAttributes(request);

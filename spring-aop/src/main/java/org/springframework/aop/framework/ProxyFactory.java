@@ -116,7 +116,7 @@ public class ProxyFactory extends ProxyCreatorSupport {
 	 * <p>Convenience method for creating a proxy for a single interceptor,
 	 * assuming that the interceptor handles all calls itself rather than
 	 * delegating to a target, like in the case of remoting proxies.
-	 * @param proxyInterface the interface that the proxy should implement
+	 * @param proxyInterface the interfa	ce that the proxy should implement
 	 * @param interceptor the interceptor that the proxy should invoke
 	 * @return the proxy object
 	 * @see #ProxyFactory(Class, org.aopalliance.intercept.Interceptor)
