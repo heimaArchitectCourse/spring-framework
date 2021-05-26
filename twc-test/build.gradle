@@ -37,14 +37,19 @@ dependencies {
     compile(project(":spring-webmvc"))
     compile(project(":spring-tx"))
     compile(project(":spring-jdbc"))
+    // https://mvnrepository.com/artifact/org.mybatis/mybatis
+    implementation group: 'org.mybatis', name: 'mybatis', version: '3.4.6'
+    // https://mvnrepository.com/artifact/org.apache.ibatis/ibatis-sqlmap
+    implementation group: 'org.apache.ibatis', name: 'ibatis-sqlmap', version: '2.3.4.726'
 
 
 
- /*   // tomcat: 将Tomcat运行时库添加到配置tomcat中: (此处为Tomcat9)
-    def tomcatVersion = '8.0.42'
-    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
-            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
-            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"*/
+
+    /*   // tomcat: 将Tomcat运行时库添加到配置tomcat中: (此处为Tomcat9)
+       def tomcatVersion = '8.0.42'
+       tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+               "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+               "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"*/
 
 }
 
